@@ -425,35 +425,92 @@
   border-radius: 16px;
 }
 
-.section6 .hotline {
-  position: relative;
+/* Form Styling */
+.contact-form {
+  transition: all 0.4s ease;
+  border: none;
 }
 
-.section6 .hotline h3 {
+.contact-form:hover {
+  box-shadow: 0 8px 24px rgba(42, 47, 69, 0.12) !important;
+}
+
+.contact-form .form-label {
   color: var(--color-one);
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
-.section6 .hotline .form-control,
-.section6 .hotline .form-select {
+.contact-form .form-control,
+.contact-form .form-select {
   border-radius: 10px;
-  border: 2px solid #e0e0e0;
-  padding: 12px 15px;
+  border: 2px solid #e8e8e8;
+  padding: 12px 16px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  margin-bottom: 15px;
+  background: #f9f9f9;
+  color: var(--color-one);
 }
 
-.section6 .hotline .form-control:focus,
-.section6 .hotline .form-select:focus {
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
   border-color: var(--color-two);
-  box-shadow: 0 0 0 0.2rem rgba(234, 111, 102, 0.15);
+  background: white;
+  box-shadow: 0 0 0 0.2rem rgba(234, 111, 102, 0.1);
 }
 
-.section6 .hotline .form-control::placeholder {
-  color: #999;
+.contact-form .form-control::placeholder {
+  color: #aaa;
+}
+
+/* Hotline & Contact Info */
+.section6 .contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.section6 .hotline {
+  position: relative;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.section6 .hotline:hover .img-phone {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.section6 .hotline img {
+  transition: all 0.4s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.section6 .hotline .title h2,
+.section6 .hotline .title h3 {
+  color: var(--color-one);
+  margin: 0;
+}
+
+.section6 .hotline .title h3 {
+  font-size: 1.5rem;
+  color: var(--color-two);
+}
+
+.section6 .img-fanpage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.section6 .img-fanpage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== FOOTER ===== */
@@ -482,7 +539,29 @@
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .section6 .contact-info {
+    margin-top: 30px;
+  }
+}
+
 @media (max-width: 768px) {
+  .contact-form {
+    max-width: 100% !important;
+  }
+
+  .section6 .contact-info {
+    gap: 25px;
+  }
+
+  .section6 h1 {
+    font-size: 2rem;
+  }
+
+  .section6 h1::after {
+    width: 90%;
+    height: 100px;
+  }
   .main .inner-warp {
     height: 400px;
   }
