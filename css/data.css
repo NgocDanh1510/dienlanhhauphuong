@@ -1,38 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap");
 
 :root {
-    --color-one: #292f45;
-    --color-two: #ea6f66;
-    --color-three: #eaeff9;
-    --font: "Wix Madefor Text", sans-serif;
+  --color-one: #292f45;
+  --color-two: #ea6f66;
+  --color-three: #eaeff9;
+  --font: "Wix Madefor Text", sans-serif;
 }
 
 * {
-    box-sizing: border-box !important;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .font {
-    font-family: var(--font)
+  font-family: var(--font);
+}
+
+body {
+  background-color: #fafafa;
 }
 
 .button {
-    border: 0;
-    background-color: var(--color-two);
-    padding: 12px 28px;
-    font: var(--font);
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(234, 111, 102, 0.3);
+  border: 0;
+  background-color: var(--color-two);
+  padding: 14px 32px;
+  font: var(--font);
+  margin-top: 20px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(234, 111, 102, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+}
+
+.button:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .button:hover {
-    color: white;
-    background-color: var(--color-one);
-    box-shadow: 0 6px 16px rgba(42, 47, 69, 0.4);
-    transform: translateY(-2px);
+  color: white;
+  background-color: var(--color-one);
+  box-shadow: 0 12px 30px rgba(42, 47, 69, 0.5);
+  transform: translateY(-3px);
+}
+
+.button:active {
+  transform: translateY(-1px);
 }
